@@ -1,11 +1,19 @@
 node {
     def app
+    def owner = 'Douglas Meldrum'
 
     stage('Clone repository') {
         /* Let's make sure we have the repository cloned to our workspace */
 
         checkout scm
     }
+
+    stage('Pre flight') {
+	/* This is were all the pre-build actions occur */
+
+        echo 'This project was hoodied by ${owner}'
+    }
+
 
     stage('Build image') {
         /* This builds the actual image; synonymous to
