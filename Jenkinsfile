@@ -11,7 +11,7 @@ node {
     stage('Pre flight') {
 	/* This is were all the pre-build actions occur */
 
-        echo 'This project was hoodied by ${owner}'
+        echo "This project was hoodied by ${owner}"
     }
 
 
