@@ -6,6 +6,7 @@ properties(
 
 node {
   def app
+  def owner = "Douglas Meldrum"
 
   stage('Clone repository') {
   /* Let's make sure we have the repository cloned to our workspace */
