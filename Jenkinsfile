@@ -1,6 +1,6 @@
 properties(
   [
-    pipelineTriggers([cron('*/2 * * * *')]),
+    pipelineTriggers([cron('*/5 * * * *')]),
   ]
 )
 
@@ -21,9 +21,7 @@ node {
   }
 
   stage('Example') {
-    steps {
-      echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
-    }
+    echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
   }
 
   stage('Build image') {
