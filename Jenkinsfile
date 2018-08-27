@@ -2,6 +2,8 @@ node {
     def app
     def owner = 'Douglas Meldrum'
 
+    triggers { pollSCM('*/2 * * * *') }
+
     stage('Clone repository') {
         /* Let's make sure we have the repository cloned to our workspace */
 
@@ -11,9 +13,14 @@ node {
     stage('Pre flight') {
 	/* This is were all the pre-build actions occur */
 
-        echo 'This project was hoodied by ${owner}'
+        echo "This project was hoodied by ${owner}"
     }
 
+    stage('Example') {
+        steps {
+            echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
+        }
+    }
 
     stage('Build image') {
         /* This builds the actual image; synonymous to
