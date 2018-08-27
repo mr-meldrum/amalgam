@@ -1,8 +1,10 @@
+/*
 properties(
   [
     pipelineTriggers([cron('*/5 * * * *')]),
   ]
 )
+*/
 
 node {
   def app
